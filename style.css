@@ -1,0 +1,82 @@
+/* ★ 😍 😎 😄 😒 😠 */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.center{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-45%,-45%);
+}
+.center .stars{
+  height: 150px;
+  width: 600px;
+  text-align: center;
+}
+.stars input{
+  display: none;
+}
+.stars label{
+  font-size: 90px;
+  color: lightgray;
+  margin: 0 4px;
+  text-shadow: 1px 1px #bbb;
+  float: right;
+}
+
+.stars label::before{
+  content: '★';
+}
+.stars input:checked ~label{
+  color:gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~label{
+  color: gold;
+}
+
+.stars input:checked > label:hover,
+.stars input:checked > label:hover ~label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+
+.stars .result::before{
+  position: absolute;
+  content: '';
+  left: 55%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  font-size: 30px;
+  font-weight: 500;
+  color:gold;
+  display: none;
+}
+
+.stars input:checked ~ .result::before{
+  display: block;
+}
+.stars #five:checked ~ .result::before{
+  display: block;
+  content: 'I love It. 😍';
+}
+.stars #four:checked ~ .result::before{
+  display: block;
+  content: 'It looks Good. 😎';
+}
+.stars #three:checked ~ .result::before{
+  display: block;
+  content: 'I like It. 😄';
+}
+.stars #two:checked ~ .result::before{
+  display: block;
+  content: 'Just OK. 😒';
+}
+.stars #one:checked ~ .result::before{
+  display: block;
+  content: 'BAD. 😠';
+}
